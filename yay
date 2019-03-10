@@ -1,0 +1,71 @@
+float temp;
+int tempPin = 0;
+int pin2 = 2;
+int pin3 = 3;
+int pin4 = 4;
+int pin5 = 5;
+int pin7 = 7;
+int pin8 = 8;
+int pin9 = 9;
+int pin10 = 10;
+int pin11 = 11;
+int pin12 = 12;
+int pin13 = 13;
+void setup()
+{
+  pinMode(pin2, OUTPUT);
+  pinMode(pin3, OUTPUT);
+  pinMode(pin4, OUTPUT);
+  pinMode(pin5, OUTPUT);
+  pinMode(pin7, OUTPUT);
+  pinMode(pin8, OUTPUT);
+  pinMode(pin9, OUTPUT);
+  pinMode(pin10, OUTPUT);
+  pinMode(pin11, OUTPUT);
+  pinMode(pin12, OUTPUT);
+  pinMode(pin13, OUTPUT);
+  Serial.begin(9600);
+   digitalWrite(pin13,HIGH);
+  digitalWrite(pin12,LOW);
+  digitalWrite(pin11,LOW);
+  digitalWrite(pin10,LOW);
+  digitalWrite(pin9,LOW);
+  digitalWrite(pin8,LOW);
+  digitalWrite(pin7,LOW);
+  digitalWrite(pin5,LOW);
+  digitalWrite(pin4,LOW);
+  digitalWrite(pin3,LOW);
+  digitalWrite(pin2,LOW);
+}
+
+void loop()
+{
+  temp = analogRead(tempPin);
+  temp = (5.0 * temp * 100.0)/1024.0;
+  Serial.print(temp);
+  Serial.println();
+  if(temp>=16.00){digitalWrite(pin2,HIGH);}
+  if(temp>=18.00){digitalWrite(pin3,HIGH);}
+  if(temp>=20.00){digitalWrite(pin4,HIGH);}
+  if(temp>=22.00){digitalWrite(pin5,HIGH);}
+  if(temp>=24.00){digitalWrite(pin7,HIGH);}
+  if(temp>=26.00){digitalWrite(pin8,HIGH);}
+  if(temp>=28.00){digitalWrite(pin9,HIGH);}
+  if(temp>=30.00){digitalWrite(pin10,HIGH);}
+  if(temp>=31.00){digitalWrite(pin11,HIGH);}
+  if(temp>=32.00){digitalWrite(pin12,HIGH);}
+  if(temp>=33.00){digitalWrite(pin13,LOW);}
+  delay(2000);
+  digitalWrite(pin13,HIGH);
+  digitalWrite(pin12,LOW);
+  digitalWrite(pin11,LOW);
+  digitalWrite(pin10,LOW);
+  digitalWrite(pin9,LOW);
+  digitalWrite(pin8,LOW);
+  digitalWrite(pin7,LOW);
+  digitalWrite(pin5,LOW);
+  digitalWrite(pin4,LOW);
+  digitalWrite(pin3,LOW);
+  digitalWrite(pin2,LOW);
+  delay(1);
+}
